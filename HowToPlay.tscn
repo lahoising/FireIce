@@ -1,0 +1,177 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/HowToPlay.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Fonts/slkscr.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Interface/Themes/MainMenuTheme.tres" type="Theme" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="HowToPlay" type="PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "custom_styles" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 800.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Back" type="Button" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 84.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 800.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b][u]Move[/u][/b] - use WASD or the arrow keys (though i don't know why you'd want to use the arrow keys)
+[b][u]Shooting[/u][/b] - throw fire with left-click and ice with right-click
+[b][u]Change Weapons[/u][/b] - Shift
+[b][u]Use Weapon[/u][/b] - Space Bar
+[b][u]Change Attack[/u][/b] - Ctrl
+[b][u]Pause Menu[/u][/b] - E button
+
+In this game you're the king of fire and ice, and your minions have turned against you. Now your goal is to survive for as long as you can, by eliminating the monsters and minions. The fire minions only take damage from ice, and viceversa.
+
+To help you in your survival, a shop has been placed where you can buy different weapons and ammo for your attacks. You can access it through the pause menu. As you progress in the game, more items will be available to be purchased.
+
+[u]Weapons[/u]:
+[img]res://Sprites/Assets/ice.png[/img] This is the Static Bomb. It works like a mine. You place it in the ground, and explodes any enemy that touches it (except Monsters, this only drains their fire health), and then disappears.
+
+[img]res://Sprites/Assets/fire.png[/img] This is the Big Bomb. This is a bomb that can help you get out of tough situations. When you use it, you explode everything around you (except Monsters, this only drains their ice health).
+
+[img]res://Sprites/Assets/fullheart.png[/img] This is pretty much a health pack. Gives you one extra health.... That's it
+
+[img]res://Sprites/Assets/Nuke.png[/img] This is the Nuke. Explodes every enemy alive.
+
+[u]Attacks[/u]:
+[img]res://Sprites/Assets/SniperSymbol.png[/img] Sniper - 25 damage
+
+[img]res://Sprites/Assets/ShotgunSymbol.png[/img] This is the shotgun... pretty straight forward."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Move - use WASD or the arrow keys (though i don't know why you'd want to use the arrow keys)
+Shooting - throw fire with left-click and ice with right-click
+Change Weapons - Shift
+Use Weapon - Space Bar
+Change Attack - Ctrl
+Pause Menu - E button
+
+In this game you're the king of fire and ice, and your minions have turned against you. Now your goal is to survive for as long as you can, by eliminating the monsters and minions. The fire minions only take damage from ice, and viceversa.
+
+To help you in your survival, a shop has been placed where you can buy different weapons and ammo for your attacks. You can access it through the pause menu. As you progress in the game, more items will be available to be purchased.
+
+Weapons:
+ This is the Static Bomb. It works like a mine. You place it in the ground, and explodes any enemy that touches it (except Monsters, this only drains their fire health), and then disappears.
+
+ This is the Big Bomb. This is a bomb that can help you get out of tough situations. When you use it, you explode everything around you (except Monsters, this only drains their ice health).
+
+ This is pretty much a health pack. Gives you one extra health.... That's it
+
+ This is the Nuke. Explodes every enemy alive.
+
+Attacks:
+ Sniper - 25 damage
+
+ This is the shotgun... pretty straight forward."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Size Flags" ]
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_Back_pressed"]
+
+

@@ -1,0 +1,47 @@
+Fire Ice weapons and guns
+
+GUNS:
+	
+	basic
+		lvl 1: normal
+		lvl 2: fire rate x2
+		lvl 3: dmg x2
+
+	sniper
+		lvl 1: normal
+		lvl 2: fire rate x2
+		lvl 3: dmg x1.5
+
+	shotgun
+		lvl 1: normal
+		lvl 2: extra bullet
+		lvl 3: dmg x2
+
+
+WEAPONS:
+
+	static bomb
+		lvl 1: se queda en el suelo y quita 15
+		lvl 2: elimina al enemigo al tocar
+		lvl 3: va hacia donde el jugar diga
+
+	ring
+		lvl 1: normal
+		lvl 2: speed x2
+		lvl 3: dmg x1.5
+
+	big bomb
+		lvl 1: normal
+		lvl 2: radius x1.25
+		lvl 3: radius x1.5
+
+	black hole
+		lvl 1: normal
+		lvl 2: duration x1.25? or x1.5
+		lvl 3: break ground (insta hp drain)
+
+	nuke
+		no levels
+
+	hearts
+		no levels

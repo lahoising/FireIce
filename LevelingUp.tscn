@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Shaders/LevelingUp.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/Assets/LevelUp/LevelUp2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/WeaponHandler/LevelingUp.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Assets/LevelUp/frame0003.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Assets/LevelUp/frame0004.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Assets/LevelUp/frame0000.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Assets/LevelUp/frame0001.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Assets/LevelUp/frame0002.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=3]
+
+length = 0.2
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "ver2.0"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+
+[node name="LevelingUp" type="Sprite" index="0"]
+
+material = ExtResource( 1 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Material" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/loop = SubResource( 3 )
+anims/starting = SubResource( 4 )
+anims/ver2.0 = SubResource( 5 )
+blend_times = [  ]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+
